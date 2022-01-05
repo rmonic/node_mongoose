@@ -21,6 +21,9 @@ async function run(){
         console.log("Błąd: "+ error)
     })
 
+    if (Character.length){
+        await Character.collection.drop();
+    }
     await Character.create([
         {name:"Macin", age:33, rank:"szeregowy"},
         {name:"Tomasz", age:38, rank:"pułkownik"},
